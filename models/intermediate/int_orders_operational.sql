@@ -4,6 +4,7 @@ orders_id
     , revenue
     , quantity
     , purchase_price
+    , shipping_fee
     , margin
     , ROUND((margin + shipping_fee - logcost - ship_cost), 2) AS operational_margin 
 FROM {{ ref("int_orders_margin") }}
