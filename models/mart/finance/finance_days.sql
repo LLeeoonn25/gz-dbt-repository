@@ -1,7 +1,7 @@
 SELECT 
     date_date
     , COUNT(*) AS transactions
-    , SUM(revenue) AS revenue22
+    , SUM(revenue) AS revenue
     , AVG(revenue) AS avg_basket
     , SUM(operational_margin) AS operational_margin
     , SUM(purchase_price) AS purchase_price
