@@ -5,7 +5,7 @@ SELECT
     ,revenue
     ,purchase_price
     ,quantity
-    ,ROUND(revenue - (quantity * purchase_price),2) AS margin
+    ,{{ margin_percent("revenue","purchase_price", 3)}} AS margin
 FROM {{ ref("stg_raw__sales")}}
 LEFT JOIN {{ ref("stg_raw__product")}}
 USING(products_id)
