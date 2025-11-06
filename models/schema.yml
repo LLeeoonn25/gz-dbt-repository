@@ -8,7 +8,7 @@ sources:
         identifier: raw_gz_sales
         description: "Sales of Greenwez"
 
-        loaded_at_field: "CAST(date_date AS DATE)"
+        loaded_at_field: "CAST(date_date AS TIMESTAMP)"
         freshness:
           warn_after: { count: 90, period: day }
         
@@ -28,3 +28,14 @@ sources:
       - name: ship
         identifier: raw_gz_ship
         description: "Shipping data of Greenwez"
+
+models:
+  - name: int_orders_margin
+    description: calculates margin
+    columns:
+      - name: orders_id
+        tests:
+          - unique
+          - not_null
+  - name: finance_days
+    description: final table
